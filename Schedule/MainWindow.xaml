@@ -7,21 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel Margin="0,0,400,0" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-            <Label Content="Schudele " Height="73" FontSize="33px" FontFamily="Microsoft YaHei UI Light"></Label>
-            <StackPanel HorizontalAlignment="Right">
-                <Label Content="by Zhangir" FontSize="8px" Width="60" FontFamily="Microsoft YaHei UI Light"></Label>
-            </StackPanel>
-            <ListView x:Name="SchudeleList" Height="333" d:ItemsSource="{d:SampleData ItemCount=5}" Width="400">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn/>
-                    </GridView>
-                </ListView.View>
-            </ListView>
-        </StackPanel>
-        <StackPanel Margin="405,10,0,0" HorizontalAlignment="Left" Width="390" Orientation="Horizontal">
-            <TextBlock x:Name="TextBlockTime" FontSize="30px" FontFamily="Microsoft YaHei UI Light" Width="220" Margin="130px" Height="40"/>
-        </StackPanel>
+         
     </Grid>
 </Window>

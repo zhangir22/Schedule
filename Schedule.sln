@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schedule", "Schedule\Schedule.csproj", "{88075510-023D-465A-859F-578B0B38E01F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bitlush.AvlTree", "..\avl-tree-c-sharp\Bitlush.AvlTree\Bitlush.AvlTree.csproj", "{A14B4C98-27C7-421F-BB43-98BA24B55AF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{88075510-023D-465A-859F-578B0B38E01F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88075510-023D-465A-859F-578B0B38E01F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88075510-023D-465A-859F-578B0B38E01F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A14B4C98-27C7-421F-BB43-98BA24B55AF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A14B4C98-27C7-421F-BB43-98BA24B55AF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A14B4C98-27C7-421F-BB43-98BA24B55AF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A14B4C98-27C7-421F-BB43-98BA24B55AF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

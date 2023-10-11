@@ -1,45 +1,40 @@
-﻿using Schedule.Models.EF;
-using Schedule.Models.Interface;
+﻿using Schedule.Models.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Schedule.Models
+namespace Schedule.Models.Service
 {
-    public class CaseService : ICaseService
+    public class CaseService:ICaseService
     {
-        private Context _db { get; } = new Context();
-        public bool FindCase(int id)
-        {
-            return _db.cases.ToList().Contains(GetCaseById(id));
-        }
-
-        public Case GetCaseById(int id)
-        {
-            return _db.cases.FirstOrDefault(c => c.Id == id);
-        }
-
+        readonly IRandomService _random = new RandomService();
+ 
         public List<Case> GetCases()
         {
-            return _db.cases.ToList();
-        }
+           
+            List<Case> cases = new List<Case>();
+            for (int i = 0; i < _random.GetRandomValue(); i++)
+            {
+                DateTime startDate = _random.GetRandomDate();
+                DateTime endDate = startDate.AddDays(_random.GetRandomValue());
+                cases.Add(new Case
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    NameCase = _random.GetRandomValue().ToString(),
+                    StartTime = startDate,
+                    EndTime = endDate,
+                    Duratation = (endDate - startDate).TotalHours,
+                    Completed = false,
+                    Pending = true,
+                    Jeopardy = false,
+                });
 
-        public int GetCountCompleted()
-        {
-            return _db.cases.Where(c => c.Completed!= false).Select(c=>c.Completed).Count(); 
+            }
+ 
+            return cases;
         }
-
-        public int GetCountJeopardy()
-        {
-            return _db.cases.Where(c => c.Jeopardy!= false).Select(c=>c.Jeopardy).Count();
-        }
-
-        public int GetCountPending()
-        {
-            return _db.cases.Where(c=>c.Pending!=false).Select(c=>c.Pending).Count();
-        }
+         
     }
 }

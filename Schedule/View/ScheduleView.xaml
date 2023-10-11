@@ -8,49 +8,62 @@
         Title="ScheduleView" Height="550" Width="802"
         Style="{StaticResource CustomWindowStyle}"
         >
-    <Grid VerticalAlignment="Top" Height="112">
-        <StackPanel Background="#012340" Margin="0,0,0,-47">
-            <Label FontSize="33" Foreground="#17A697"  Content="Schedule"></Label>
-            <Label Foreground="LightBlue" Content="By Zhangir" HorizontalAlignment="Left"></Label>
-            <StackPanel Orientation="Horizontal" Height="37">
-                <WrapPanel Width="173" VerticalAlignment="Top">
-                    <Label Foreground="#FF7DFF7E" Content="Completed" Height="36"></Label>
-                    <TextBlock x:Name="CompletedView" Width="95" Height="24" TextAlignment="Center" Foreground="LightCoral"/>
-                </WrapPanel>
-                <WrapPanel Width="173" VerticalAlignment="Top">
-                    <Label Foreground="Wheat" Content="Pending" Height="36"></Label>
-                    <TextBlock x:Name="PendingView" Width="95" Height="24" TextAlignment="Center" Foreground="#FF7DFF7E"/>
-                </WrapPanel>
-                <WrapPanel Width="173" VerticalAlignment="Top">
-                    <Label Foreground="LightCoral" Content="Jeopardy" Height="36"></Label>
-                    <TextBlock x:Name="JeopardyView" Foreground="#F2D7B6" Width="95" Height="24" TextAlignment="Center"/>
-                </WrapPanel>
+    <Window.Resources>
+        <Thickness x:Key="tbmargin" Right="45" />
 
-            </StackPanel>
-
-            <Button  Content="Generate Schedule" Foreground="Black" Width="120" Height="22" BorderBrush="Transparent" Background="Wheat" HorizontalAlignment="Right" Margin="0,20,0,0" Click="Button_Click" RenderTransformOrigin="-1.161,0.84">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="4"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-
+    </Window.Resources>
+    <Grid>
+        <StackPanel Margin="0,0,0,439" Background="#FFD24136">
+            <Label Content="Schedule" FontFamily="Times New Roman" FontSize="36" Foreground="White"/>
+            <Label Content="By Zhanggir" FontFamily="Times New Roman" Background="#FFEBB582" Foreground="White" HorizontalAlignment="Left"/>
+            <Label x:Name="CurrentDate" FontFamily="Times New Roman" Content="Jun 8h. Fri" FontSize="16" Foreground="White"/>
         </StackPanel>
-        <Button  x:Name="CompleteCaseButton" Content="Complete a Case" Foreground="Black" Width="120" Height="22" BorderBrush="Transparent" Background="#FF7DFF7E" HorizontalAlignment="Left" Margin="0,0,0,-45" VerticalAlignment="Bottom" Click="CompleteCaseButton_Click"  >
+        <Button Background="#ebb582" Foreground="White" Content="Generate Schedule" Height="20" Margin="667,79,10,447" Click="Button_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="4"/>
+                    <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Grid   Margin="0,162,0,-436">
-            <StackPanel>
-                <ListBox Background="Transparent" Width="800" Height="385" x:Name="ListData" Foreground="#012340">
-
-                </ListBox>
+        <StackPanel Orientation="Horizontal" Margin="79,76,131,439">
+            <StackPanel Orientation="Horizontal" Width="130">
+                <Label Foreground="Aqua" Content="Completed"></Label>
+                <TextBlock Text="" Foreground="White" x:Name="CompletedView" VerticalAlignment="Center" Height="23"></TextBlock>
             </StackPanel>
-        </Grid>
+
+            <StackPanel Orientation="Horizontal" Width="130">
+                <Label Foreground="Aqua" Content="Pending"></Label>
+                <TextBlock Text="" Foreground="White" x:Name="PendingView" VerticalAlignment="Center" Height="23"></TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Width="130">
+                <Label Foreground="Aqua" Content="Jeopardy"></Label>
+                <TextBlock Text="" Foreground="White" x:Name="JeopardyView" VerticalAlignment="Center" Height="23"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Margin="0,104,0,424" Background="#FFEB8A3E" Orientation="Horizontal">
+            <TextBlock Foreground="White" Margin="{StaticResource tbmargin}" Text="0"></TextBlock>
+            <TextBlock Foreground="White" Margin="{StaticResource tbmargin}" Text="5"></TextBlock>
+            <TextBlock Foreground="White" Margin="{StaticResource tbmargin}" Text="10"></TextBlock>
+            <TextBlock Foreground="White" Margin="{StaticResource tbmargin}" Text="15"></TextBlock>
+            <TextBlock Foreground="White" Margin="{StaticResource tbmargin}" Text="20"></TextBlock>
+            <TextBlock Foreground="White" Margin="{StaticResource tbmargin}" Text="25"></TextBlock>
+            <TextBlock Foreground="White" Margin="{StaticResource tbmargin}" Text="30"></TextBlock>
+            <TextBlock Foreground="White" Margin="{StaticResource tbmargin}" Text="35"></TextBlock>
+            <TextBlock Foreground="White" Margin="{StaticResource tbmargin}" Text="40"></TextBlock>
+            <TextBlock Foreground="White" Margin="{StaticResource tbmargin}" Text="45"></TextBlock>
+            <TextBlock Foreground="White" Margin="{StaticResource tbmargin}" Text="50"></TextBlock>
+            <TextBlock Foreground="White" Margin="{StaticResource tbmargin}" Text="55"></TextBlock>
+            <TextBlock Foreground="White" Margin="{StaticResource tbmargin}" Text="60"></TextBlock>
+            <TextBlock Foreground="White" Margin="{StaticResource tbmargin}" Text="65"></TextBlock>
+        </StackPanel>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Visible" Margin="0,136,0,0">
+            <WrapPanel x:Name="box" Height="420" Orientation="Vertical">
+                
+                   
+            </WrapPanel>
+
+        </ScrollViewer>
     </Grid>
 
 </Window>

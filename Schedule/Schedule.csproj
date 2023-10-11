@@ -81,25 +81,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Migrations\202309261337317_NewTableState.cs" />
-    <Compile Include="Migrations\202309261337317_NewTableState.designer.cs">
-      <DependentUpon>202309261337317_NewTableState.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202309261431198_ReferncesStateCase.cs" />
-    <Compile Include="Migrations\202309261431198_ReferncesStateCase.designer.cs">
-      <DependentUpon>202309261431198_ReferncesStateCase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202309261509564_DropState.cs" />
-    <Compile Include="Migrations\202309261509564_DropState.designer.cs">
-      <DependentUpon>202309261509564_DropState.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Interface\RedactInterfaces\ICaseRedactService.cs" />
-    <Compile Include="Models\Interface\ServiceInterfaces\ICaseService.cs" />
+    <Compile Include="Models\Interfaces\ICaseService.cs" />
+    <Compile Include="Models\Interfaces\IPanelService.cs" />
+    <Compile Include="Models\Interfaces\IRandomService.cs" />
+    <Compile Include="Models\Interfaces\ITreeService.cs" />
     <Compile Include="Models\Service\CaseService.cs" />
-    <Compile Include="Models\Redact\CaseRedact.cs" />
-    <Compile Include="View\CaseCreate.xaml.cs">
-      <DependentUpon>CaseCreate.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Service\PanelService.cs" />
+    <Compile Include="Models\Service\RandomService.cs" />
+    <Compile Include="Models\Service\TreeService.cs" />
     <Compile Include="View\ScheduleView.xaml.cs">
       <DependentUpon>ScheduleView.xaml</DependentUpon>
     </Compile>
@@ -115,24 +104,13 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\CaseCreate.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\ScheduleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202309200833552_InitialCreate.cs" />
-    <Compile Include="Migrations\202309200833552_InitialCreate.designer.cs">
-      <DependentUpon>202309200833552_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Case.cs" />
-    <Compile Include="Models\EF\Context.cs" />
-    <Compile Include="Models\Interface\ICase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -146,18 +124,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202309200833552_InitialCreate.resx">
-      <DependentUpon>202309200833552_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202309261337317_NewTableState.resx">
-      <DependentUpon>202309261337317_NewTableState.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202309261431198_ReferncesStateCase.resx">
-      <DependentUpon>202309261431198_ReferncesStateCase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202309261509564_DropState.resx">
-      <DependentUpon>202309261509564_DropState.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -172,7 +138,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Media\" />
+    <ProjectReference Include="..\..\avl-tree-c-sharp\Bitlush.AvlTree\Bitlush.AvlTree.csproj">
+      <Project>{a14b4c98-27c7-421f-bb43-98ba24b55af6}</Project>
+      <Name>Bitlush.AvlTree</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8.1">
